@@ -1,13 +1,11 @@
 # Add  code here!
-def prime?(num)
-  return true if num == 2
-  return false if num <= 1 || num.even?
-  i = 3
-  top = Math.sqrt(num).floor
-  loop do
-    return false if (num % i).zero?
-    i += 2
-    break if i >= top
+def prime?(n)
+  if n <= 1
+  return false
+
+  else (2..n-1).to_a.all? do |integer|
+   n % integer != 0
+
+   end
   end
-  true
 end
