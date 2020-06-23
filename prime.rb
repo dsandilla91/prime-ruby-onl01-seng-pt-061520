@@ -1,9 +1,13 @@
 # Add  code here!
 def prime?(num)
-  (2..Math.sqrt(num)).each { |i|
-  if num % i == 0 && i < num
-    return false
+  return true if num == 2
+  return false if num <= 1 || num.even?
+  i = 3
+  top = Math.sqrt(num).floor
+  loop do
+    return false if (num % i).zero?
+    i += 2
+    break if i >= top
   end
-  }
   true
-  end
+end
